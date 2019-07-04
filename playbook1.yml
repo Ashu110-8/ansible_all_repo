@@ -1,0 +1,8 @@
+---
+  name: test for playbook 1
+  hosts: testVM
+  tasks:
+    - name: user createtion
+      user: dummy_new
+      shell: /bin/bash
+...

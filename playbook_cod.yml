@@ -1,0 +1,17 @@
+---
+- name: test for conditional 
+  hosts: all
+  tasks:
+  - name: 
+    win_lineinfile:
+      path: C:\hp\Ashutosh\index.html
+      line: 'this is window server'
+    when: 
+      - ansible_distribution == "window"
+  - name: copy on linux
+    lineinfile:
+       path: /var/www/html/index.html
+       line: 'this is linux'	    
+    when:
+      - ansible_os_family == "RedHat"  
+...

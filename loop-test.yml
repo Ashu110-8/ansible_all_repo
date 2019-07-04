@@ -1,0 +1,13 @@
+---
+- name: test for  register for unix command playbook 1
+  hosts: common
+  tasks:
+  - name: assign group to userA
+    yum:
+      name: "{{item}}"
+      state: present
+    with_items:
+       - git
+       - wget
+       - vim
+...

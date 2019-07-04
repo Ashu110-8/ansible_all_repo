@@ -1,0 +1,9 @@
+---
+- name: test for playbook 1
+  hosts: testVM
+  tasks:
+  - name: install wget
+    yum:
+      name: git
+      state: present
+...

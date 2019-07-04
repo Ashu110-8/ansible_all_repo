@@ -1,0 +1,25 @@
+---
+- name: test for playbook 1
+  hosts: common
+  vars:
+    yourname: "Ashutosh-playbook"
+    companyname: "hpe-playbook"
+    age: "11"
+    emailaddress: "no idea"
+  tasks:
+  - name: assign group to user
+    yum:
+      name: httpd
+      state: present
+  - name: write the apache config file
+    template:
+      src: /etc/ansible/template-example/templates/index.j2
+      dest: /var/www/html/index.html
+    notify:
+    - restart apache
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+...

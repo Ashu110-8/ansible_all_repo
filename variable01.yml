@@ -1,0 +1,23 @@
+---
+- name: test for playbook 1
+  hosts: common
+  vars_files:
+    - "vars_file.yml"
+  vars_prompt:
+    - name: "myname"
+      private: no
+      prompt: "What is your name?"
+    - name: "mycomp"
+      private: no
+      prompt: "What is your comp?"
+  vars:
+    myname: "Ashutosh-playbook"
+    mycomp: "hpe-playbook"
+  tasks:
+  - name: assign group to user
+    copy:
+      dest: /var/www/html/index.html
+      content: 'this HPe content'
+  - debug:
+      msg: System {{ myname }} has uuid {{ ansible_product_uuid }} of company {{mycomp}}
+...

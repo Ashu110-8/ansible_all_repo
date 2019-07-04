@@ -1,0 +1,15 @@
+---
+- name: test for  register for unix command playbook 1
+  hosts: common
+  vars:
+    myname: "Ashutosh-playbook"
+    mycomp: "hpe-playbook"
+  tasks:
+  - name: assign group to user
+    shell: " find *.html"
+    args: 
+      chdir: /var/www/html
+    register: find_output 
+  - debug:
+      var: find_output
+...

@@ -1,0 +1,8 @@
+---
+- hosts: common
+  vars:
+    myname: "Ashutosh-playbook"
+    mycomp: "hpe-playbook"
+  tasks:
+  - include: callYAML.yml
+...

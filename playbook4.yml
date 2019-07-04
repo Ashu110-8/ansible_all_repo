@@ -1,0 +1,10 @@
+---
+- name: test for playbook 1
+  hosts: testVM
+  tasks:
+  - name: assign group to user
+    user:
+      name: dummy_new
+      group: newgroup
+      shell: /bin/bash
+...

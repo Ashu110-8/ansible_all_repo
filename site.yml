@@ -1,0 +1,14 @@
+---
+- hosts: common 
+  roles: 
+#    - role: user-create 
+#    - role: sudo-add_Role 
+#    - role: group_create_role 
+#    - role: group_assign_role 
+#    - role: http_install_role 
+#    - role: http_restart_role 
+#    - role: http_indexupdate_role 
+#    - role: copygitrepo_role 
+#    - role: git-wget_install_role 
+    - role: AllinOne_role
+

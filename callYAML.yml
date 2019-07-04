@@ -1,0 +1,3 @@
+#- name: calling msg
+  - debug:
+      msg: System Ashutosh has uuid {{ ansible_product_uuid }} of company hpe
